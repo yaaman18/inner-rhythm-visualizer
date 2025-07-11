@@ -1,0 +1,25 @@
+[package]
+name = "inner-rhythm-visualizer"
+version = "0.1.0"
+description = "Visualizer for AI consciousness inner rhythms"
+authors = ["Your Name"]
+license = "MIT"
+repository = "https://github.com/yaaman18/inner-rhythm-visualizer"
+edition = "2021"
+rust-version = "1.57"
+
+[build-dependencies]
+tauri-build = { version = "1.4", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.4", features = ["shell-open"] }
+rand = "0.8"
+nalgebra = "0.32"
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
